@@ -1,0 +1,46 @@
+############################################################################################################
+Comandos importantes para React Native
+############################################################################################################
+
+Para criar uma aplicação mobile com app:
+	$ npx create-expo-app nome-projeto
+
+Para rodar o projeto:
+	$ npx expo start
+
+Para abrir o projeto no celular:
+	- Abrir a câmera e escanear o QrCode e o app Expo irá abrir o projeto;
+
+Para exibir na web:
+	- Para corrigir bugs da versão do expo:
+		$ npx expo install react-native-web@~0.19.6
+		$ npx expo install react-dom@18.2.0
+		$ npx expo install @expo/webpack-config
+	-Para corrigir erro antes de rodar na web:
+		- app.json
+			"web": {
+		      		"favicon": "./assets/favicon.png",
+		      		"bundler": "metro"
+		    	}
+
+Para instalar o Paper:
+	$ npm install react-native-paper
+	$ npm install react-native-safe-area-context
+
+Para instalar o Navigator para navegar entre as páginas: 
+	$ npm install @react-navigation/native @react-navigation/native-stack
+	$ npx expo install react-native-screens react-native-safe-area-context
+
+Para instalar o Axios:
+	$ npm i axios
+
+Para imagens
+	http://image.tmdb.org/t/p/w500/
+	https://api.themoviedb.org/3/movie/popular?language=pt-BR&api_key=
+
+Vai precisar toda aula:
+  	<NavigationContainer>
+        	<Stack.Navigator>
+          		<Stack.Screen name="profile" component={ProfileScreen}/>
+        	</Stack.Navigator>
+      	</NavigationContainer>

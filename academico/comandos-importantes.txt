@@ -73,3 +73,6 @@ Para quando precisar do stack screen do navigator
           </Stack.Navigator>
         </NavigationContainer>
 
+Para instalar o async storage
+	$ npm install @react-native-async-storage/async-storage
+

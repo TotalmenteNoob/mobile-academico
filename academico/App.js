@@ -24,7 +24,7 @@ export default function App() {
               component={CursoStack}
               options={{
                 tabBarIcon: () => (
-                  <MaterialCommunityIcons name="movie-open" size={26} />
+                  <MaterialCommunityIcons name="bookshelf" size={26} />
                 ),
               }}
             />
@@ -33,7 +33,7 @@ export default function App() {
               component={DisciplinaStack}
               options={{
                 tabBarIcon: () => (
-                  <MaterialCommunityIcons name="movie-open" size={26} />
+                  <MaterialCommunityIcons name="book-open" size={26} />
                 ),
               }}
             />
@@ -42,7 +42,7 @@ export default function App() {
               component={AlunoStack}
               options={{
                 tabBarIcon: () => (
-                  <MaterialCommunityIcons name="movie-open" size={26} />
+                  <MaterialCommunityIcons name="human-handsup" size={26} />
                 ),
               }}
             />
@@ -51,7 +51,7 @@ export default function App() {
               component={ProfessorStack}
               options={{
                 tabBarIcon: () => (
-                  <MaterialCommunityIcons name="movie-open" size={26} />
+                  <MaterialCommunityIcons name="account-tie" size={26} />
                 ),
               }}
             />
@@ -60,7 +60,7 @@ export default function App() {
               component={TurmaStack}
               options={{
                 tabBarIcon: () => (
-                  <MaterialCommunityIcons name="movie-open" size={26} />
+                  <MaterialCommunityIcons name="google-classroom" size={26} />
                 ),
               }}
             />

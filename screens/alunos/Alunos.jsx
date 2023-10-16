@@ -2,32 +2,31 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import React, { useEffect, useState } from 'react'
 import { Button, Text } from 'react-native-paper'
 
-const Cursos = ({ navigation }) => {
+const Alunos = ({ navigation }) => {
 
-    const [cursos, setCursos] = useState([])
+    const [alunos, setAlunos] = useState([])
 
     useEffect(() => {
-        AsyncStorage.getItem('cursos').then(resultado => {
+        AsyncStorage.getItem('alunos').then(resultado => {
             
             resultado = JSON.parse(resultado) || []
 
             console.log(resultado)
-            setCursos(resultado)
+            setAlunos(resultado)
         })
     }, [])
 
     return (
         <>
-            <Text>Cursos</Text>
 
-            {cursos.map(item => (
+            {alunos.map(item => (
                 <Text>{item.nome}</Text>
             ))}
 
             <Button
                 icon='plus'
                 mode='contained'
-                onPress={() => navigation.push('cursos-form')}
+                onPress={() => navigation.push('alunos-form')}
             >
                 Novo
             </Button>
@@ -35,4 +34,4 @@ const Cursos = ({ navigation }) => {
     )
 }
 
-export default Cursos
+export default Alunos

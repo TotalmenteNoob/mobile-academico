@@ -1,15 +1,14 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import React, { useState } from 'react'
 import { ScrollView } from 'react-native'
-import { Button, Text, TextInput, Picker } from 'react-native-paper'
+import { Button, Text, TextInput } from 'react-native-paper'
 
-const DisciplinasForm = ({ navigation }) => {
-    const [dados, setDados] = useState({
-        nome: '',
-        curso_id: null,
-    })
+const DisciplinasForm = ({ navigation, route }) => {
 
-    const cursos = [] // Carregue os cursos de alguma fonte de dados, como AsyncStorage ou uma API
+    const disciplina = route.params?.disciplina || {}
+    const id = route.params?.id
+
+    const [dados, setDados] = useState(disciplina)
 
     function handleChange(valor, campo) {
         setDados({ ...dados, [campo]: valor })
@@ -19,8 +18,11 @@ const DisciplinasForm = ({ navigation }) => {
         AsyncStorage.getItem('disciplinas').then(resultado => {
             const disciplinas = JSON.parse(resultado) || []
 
-            disciplinas.push(dados)
-            console.log(disciplinas)
+            if (id >= 0) {
+                disciplinas.splice(id, 1, dados)
+            } else {
+                disciplinas.push(dados)
+            }
 
             AsyncStorage.setItem('disciplinas', JSON.stringify(disciplinas))
 
@@ -41,18 +43,17 @@ const DisciplinasForm = ({ navigation }) => {
                     onChangeText={(valor) => handleChange(valor, 'nome')}
                 />
 
-                <Picker
-                    selectedValue={dados.curso_id}
-                    onValueChange={(valor) => handleChange(valor, 'curso_id')}
+                <TextInput
                     style={{ margin: 10 }}
-                >
-                    <Picker.Item label="Selecione um curso" value={null} />
-                    {cursos.map(curso => (
-                        <Picker.Item key={curso.id} label={curso.nome} value={curso.id} />
-                    ))}
-                </Picker>
+                    mode="outlined"
+                    label='Curso'
+                    keyboardType="decimal-pad"
+                    value={dados.courses}
+                    onChangeText={(value) => handleChange(value, 'curso_id')}
+                />
 
                 <Button onPress={salvar}>Salvar</Button>
+
             </ScrollView>
         </>
     )

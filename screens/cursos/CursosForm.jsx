@@ -26,8 +26,6 @@ const CursosForm = ({ navigation, route }) => {
                 cursos.push(dados)
             }
 
-            console.log(cursos)
-
             AsyncStorage.setItem('cursos', JSON.stringify(cursos))
 
             navigation.goBack()

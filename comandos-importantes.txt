@@ -76,3 +76,11 @@ Para quando precisar do stack screen do navigator
 Para instalar o async storage
 	$ npm install @react-native-async-storage/async-storage
 
+Para instalar o Formik
+	$ npm i formik
+
+Para instalar o Yup
+	$ npm i yup
+
+Para importar manualmente o Yup
+	import * as Yup from 'yup';

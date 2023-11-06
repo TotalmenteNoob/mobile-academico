@@ -84,3 +84,6 @@ Para instalar o Yup
 
 Para importar manualmente o Yup
 	import * as Yup from 'yup';
+
+Para instalar o Remask
+	$ npm i remask

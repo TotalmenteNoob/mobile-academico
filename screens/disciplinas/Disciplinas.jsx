@@ -25,7 +25,7 @@ const Disciplinas = ({ navigation }) => {
     function carregarDados() {
         AsyncStorage.getItem('disciplinas').then(resultado => {
             resultado = JSON.parse(resultado) || []
-                setDisciplinas(resultado)
+            setDisciplinas(resultado)
         })
     }
 
@@ -50,7 +50,7 @@ const Disciplinas = ({ navigation }) => {
                     <Card key={i} mode='outlined' style={{ marginBottom: 10 }}>
                         <Card.Content >
                             <Text variant="titleLarge">{item.nome}</Text>
-                            <Text variant="bodyMedium">Id de curso: {item.curso_id}</Text>
+                            <Text variant="bodyMedium">Id de curso: {item.cursos}</Text>
                         </Card.Content>
                         <Card.Actions>
                             <IconButton icon='pencil' iconColor='#009EFF' onPress={() => navigation.push('disciplinas-form', { id: i, disciplina: item })} />
